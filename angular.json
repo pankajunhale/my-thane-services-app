@@ -40,6 +40,7 @@
             "scripts": [
               "assets/js/plugins/perfect-scrollbar.min.js",
               "assets/js/plugins/smooth-scrollbar.min.js",
+              "assets/js/plugins/datatables.js",
               "assets/js/argon-dashboard.min.js"
             ]
           },
