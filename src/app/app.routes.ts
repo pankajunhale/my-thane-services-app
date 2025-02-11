@@ -10,6 +10,16 @@ export const routes: Route[] = [
     pathMatch: 'full',
   },
   {
+    path: 'logout',
+    component: LogoutComponent,
+  },
+  {
+    path: 'registration',
+    loadComponent: () =>
+      import('./pages/signup/signup.component').then((m) => m.SignupComponent),
+    pathMatch: 'full',
+  },
+  {
     path: '',
     component: AdminLayoutComponent,
     children: [
@@ -32,10 +42,6 @@ export const routes: Route[] = [
           import('./pages/profile/profile.component').then(
             (c) => c.ProfileComponent
           ),
-      },
-      {
-        path: 'logout',
-        component: LogoutComponent,
       },
     ],
   },
