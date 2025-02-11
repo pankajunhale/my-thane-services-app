@@ -1,0 +1,13 @@
+import { Component, inject, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-logout',
+  templateUrl: './logout.component.html',
+  styleUrls: ['./logout.component.css'],
+})
+export class LogoutComponent implements OnInit {
+  constructor() {}
+  ngOnInit(): void {
+    window.location.href = 'login';
+  }
+}
