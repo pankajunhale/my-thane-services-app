@@ -1,17 +1,12 @@
 import { Route } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 export const routes: Route[] = [
   {
     path: 'login',
-    loadChildren: () =>
+    loadComponent: () =>
       import('./pages/login/login.component').then((m) => m.LoginComponent),
-    pathMatch: 'full',
-  },
-  {
-    path: 'logout',
-    loadChildren: () =>
-      import('./pages/logout/logout.component').then((m) => m.LogoutComponent),
     pathMatch: 'full',
   },
   {
@@ -24,7 +19,29 @@ export const routes: Route[] = [
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
       },
+      {
+        path: 'service-category',
+        loadComponent: () =>
+          import('./pages/service-category/service-category.component').then(
+            (c) => c.ServiceCategoryComponent
+          ),
+      },
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('./pages/profile/profile.component').then(
+            (c) => c.ProfileComponent
+          ),
+      },
+      {
+        path: 'logout',
+        component: LogoutComponent,
+      },
     ],
+  },
+  {
+    path: '**',
+    redirectTo: 'dashboard',
   },
   // {
   //   path: '',
